@@ -13,22 +13,22 @@ Für eine bekannte Konstellation von Artikeln, die aus den Lagerplätzen geholt 
 Ein Lager besteht aus 2 Lagerplätzen und es werden insgesamt 20 Artikel auf gleichmäßig auf diese Plätze verteilt. Es sollen 10 bestimmte Artikel kommissioniert werden. Auf Lagerplatz 1 liegen 5 Artikel, auf Lagerplatz 2 liegen weitere 5 Artikel.
 
 Die Wahrscheinlichkeit für das Auftreten dieser Konstellation ist gegeben durch 
-$$
+```math
 P(L1:5, L2:5) = \frac{\binom{10}{5}\cdot\binom{10}{5}}{\binom{20}{10}}=\frac{252^2}{184756} \approx 0,344
-$$
+```
 In diesem Fall lässt sich die Verteilung $P_S$, dass man entweder einen oder zwei Lagerplätze besuchen muss einfach berechnen. 
 
 Für einen Lagerplatz müssen die Wahrscheinlichkeiten $P(L1:10)$ und $P(L2:10)$ addiert werden:
-$$
+```math
 P(L1:10) = P(L2:10) = \frac{{\binom{10}{10}}}{\binom{20}{10}} = \frac{1}{184756}
-$$
+```
 Daraus folgt:
-$$
+```math
 P_S(1) = 2*P(L1:10) \approx 0.00001
-$$
-$$
+```
+```math
 P_S(2) = 1-P_S(1) \approx 0.99999
-$$
+```
 
 ### 
 
