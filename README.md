@@ -53,16 +53,16 @@ P_S(2)=\frac{92377}{92378}\approx0.99998917491
 
 ### Verallgemeinerung bei 2 Lagerplätzen, $n$ Artikel und $s$ gesuchten Artikel
 ```math
+\color{cyan}
 P_S(1) = 2 * P(L1:s) = 2\cdot\binom{n}{s}^{-1}
 ```
 Und für den Fall von 2 aufgesuchten Lagerplätzen liegt die Wahrscheinlichkeit bei 
 ```math
-\color{green}
 P_S(2) = P(L1:1, L2:s-1) + ... + P(L1:s-1, L2:1)
 ```
 
 ```math
-\color{green}
+\color{cyan}
 P_S(2)=\frac{s-2}{\binom{n}{s}}\cdot\sum_{i=1}^{s-1}\binom{s}{i}^2
 ```
 
