@@ -75,7 +75,7 @@ class MC:
             self.probabilities.append([r, self.stat[r]/self.n_runs])
 
 def test():
-    p = Problem(n_articles=100, n_places=10, n_searched_articles=10)
+    p = Problem(n_articles=10, n_places=2, n_searched_articles=5)
     mc = MC(problem=p)
     print(mc)
     while mc.n_runs<1000000:
