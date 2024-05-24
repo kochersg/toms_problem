@@ -13,6 +13,7 @@ requires-python = ">= 3.8"
 
 [project.scripts]
 test = "toms_problem:test"
+an_test = "toms_problem:an_test"
 
 [build-system]
 requires = ["hatchling"]
