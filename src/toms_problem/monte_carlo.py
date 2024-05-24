@@ -78,10 +78,20 @@ def test():
     p = Problem(n_articles=10, n_places=2, n_searched_articles=5)
     mc = MC(problem=p)
     print(mc)
-    while mc.n_runs<1000000:
+    while mc.n_runs<10000:
         mc.add_run_to_stat()
     mc.calc_probabilities()
     print(mc.probabilities)
+
+def calc_MC(n_articles: int, n_places: int, n_searched_articles: int, n_MC_runs: int)->None:
+    p = Problem(n_articles=n_articles, n_places=n_places, n_searched_articles=n_searched_articles)
+    mc = MC(problem=p)
+    while mc.n_runs<n_MC_runs:
+        mc.add_run_to_stat()
+    mc.calc_probabilities()
+    print(mc)
+    print(mc.probabilities)
+
 
 def main():
     pass
