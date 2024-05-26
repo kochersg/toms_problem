@@ -1,5 +1,6 @@
 import click
 import toms_problem.monte_carlo as monte_carlo
+import toms_problem.analytic_solution as sol
 @click.group()
 def cli() -> None:
     pass
@@ -42,4 +43,34 @@ def calc_mc(number_of_articles: int, number_of_places: int, number_of_searched_a
         n_MC_runs=number_of_mc_runs
     )
 
+@click.command()
+@click.option(
+    "-n",
+    "--number-of-articles",
+    type=click.INT,
+    default=20,
+)
+@click.option(
+    "-p",
+    "--number-of-places",
+    type=click.INT,
+    default=5,
+)
+@click.option(
+    "-s",
+    "--number-of-searched-articles",
+    type=click.INT,
+    default=5,
+)
+def solve(number_of_articles: int, number_of_places: int, number_of_searched_articles: int):
+    click.echo(f"Number of articles {number_of_articles}")
+    click.echo(f"Number of places {number_of_places}")
+    click.echo(f"Number of searched articles {number_of_searched_articles}")
+    sol.calc_solution(
+        n_articles=number_of_articles, 
+        n_places=number_of_places, 
+        n_searched_articles=number_of_searched_articles, 
+    )
+
 cli.add_command(calc_mc)
+cli.add_command(solve)

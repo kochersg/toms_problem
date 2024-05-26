@@ -33,7 +33,7 @@ def find_combination_list(problem: problem.Problem) -> list[list[int]]:
                 break
         if sum(r)==problem.n_searched_articles:
             res.append(copy.deepcopy(r))
-        ix += 1
+        ix += problem.n_searched_articles
     return res
 
 def get_combi_length(combi: list[int]) -> int:
@@ -77,11 +77,21 @@ def numberToBase(n, b):
     return digits[::-1]
 
 def math_test():
-    p = problem.Problem(n_articles=10000, n_places=5, n_searched_articles=10)
+    p = problem.Problem(n_articles=105, n_places=7, n_searched_articles=10)
     print(c:=find_combination_list(problem=p))
     print(d:=sort_combinations_to_number_of_searches(combinations=c))
     print(r:=calc_probability_distribution(problem=p, combi_dict=d))
     print(sum([c[1] for c in r]))
+
+def calc_solution(n_articles: int, n_places: int, n_searched_articles: int) -> None:
+    p = problem.Problem(n_articles=n_articles, n_places=n_places, n_searched_articles=n_searched_articles)
+    c=find_combination_list(problem=p)
+    d=sort_combinations_to_number_of_searches(combinations=c)
+    r=calc_probability_distribution(problem=p, combi_dict=d)
+    print(r)
+    # print(sum([c[1] for c in r]))
+
+
 
 
 
